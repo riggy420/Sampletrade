@@ -337,10 +337,6 @@ class risk_assessment:
             list_1.append(self.MFI_list[i])
             list_1.append(self.rsi_list[i-2])
             list_1.append(self.d_list[i])
-            W_moderate = 1/2*0.618**2*max(list_1)+1/2*min(list_1)+1/2*0.618*(self.MFI_list[i]+self.rsi_list[i-2]+self.d_list[i]-max(list_1)-min(list_1))
-            # W_buy = 1/2*0.618**2*max(list_1)+1/2*min(list_1)+1/2*0.618*(self.MFI_list[i]+self.rsi_list[i-2]+self.d_list[i]-max(list_1)-min(list_1))
-            W_sell = 1/2*0.618**2*min(list_1)+1/2*max(list_1)+1/2*0.618*(self.MFI_list[i]+self.rsi_list[i-2]+self.d_list[i]-max(list_1)-min(list_1))
-            # print(W_moderate)
 
             # W_value = (MFI_list[i]+rsi_list[i]+d_list[i+3])/3
             if W_moderate < 17:  #### 25
