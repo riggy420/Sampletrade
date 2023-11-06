@@ -323,14 +323,8 @@ class risk_assessment:
         # print(len(self.list_of_ending_price)-14-self.a+1)
         for i in range(len(self.list_of_ending_price)-14-self.a-1-14-14):  #len(list_of_ending_price)-14-a-1
             # print(i+a-11)
-            # # print(type(MFI_list[i]))
-            # print("MFI: " +str(MFI_list[i]))
-            # print(rsi_list[i])
-            # print(d_list[i+3])
-            # print(d_list[i])
-            W_value = (self.MFI_list[i]+self.rsi_list[i]+self.d_list[i+3])/3
-            # print(W_value)
-            self.W_list.append(W_value)
+
+
     # @jit(target_backend='cuda')                         
     def W_moderate(self):
         # print("Hello World")
@@ -341,20 +335,7 @@ class risk_assessment:
         # print(len(self.rsi_list))
         # print(len(self.list_of_ending_price)-1-self.a-3)
         for i in range(len(self.list_of_ending_price)-2*self.a):  #len(list_of_ending_price)-14-a-1 #may cause bug => need to fix some bug arised from there
-            # list_2=[]
-            # print(i+a-11)
-            # # print(type(MFI_list[i]))
-            # print("MFI: " +str(MFI_list[i]))
-            # print(rsi_list[i-2])
-            # print(d_list[i])
-            # print(d_list[i])
-            list_1= []
-            list_1.append(self.MFI_list[i])
-            list_1.append(self.rsi_list[i-2])
-            list_1.append(self.d_list[i])
-            # print(W_moderate)
 
-            # W_value = (MFI_list[i]+rsi_list[i]+d_list[i+3])/3
             if W_moderate < 17:  #### 25
                 # print("Time to purcharse as the W's value hits " + str(W_moderate)+ " Date:" + self.list_of_date[i+self.a] + " Price: " +str(self.list_of_ending_price[self.a+i]))
                 self.comparing_date_purchase.append(i+self.a)
@@ -840,14 +821,9 @@ class risk_assessment:
             # print(rsi_list[i-2])
             # print(d_list[i])
             # print(d_list[i])
-        list_1= []
-        list_1.append(MFI_list[-1])
-        list_1.append(rsi_list[-1])
-        list_1.append(d_list[-1])
-        print("W buy at: " +str(W_moderate))
+
         return W_moderate
 
-        # W_value = (MFI_list[i]+rsi_list[i]+d_list[i+3])/3
         # if W_moderate < 17:  #### 25
         #     # print("Time to purcharse as the W's value hits " + str(W_moderate)+ " Price: " +str(self.list_of_ending_price[-1]))
         #     # self.comparing_date_purchase.append(i+self.a)
@@ -979,21 +955,11 @@ class risk_assessment:
             # print(rsi_list[i-2])
             # print(d_list[i])
             # print(d_list[i])
-        list_1= []
-        list_1.append(MFI_list[-1])
-        list_1.append(rsi_list[-1])
-        list_1.append(d_list[-1])
-        print("MFI" +str(MFI_list[-1]))
-        print("rsi"+str(rsi_list[-1]))
-        print(d_list[-1]) 
 
-        # W_value = (MFI_list[i]+rsi_list[i]+d_list[i+3])/3
         # if W_moderate < 17:  #### 25
         #     print("Time to purcharse as the W's value hits " + str(W_moderate)+ " Price: " +str(self.list_of_ending_price[-1]))
         #     # self.comparing_date_purchase.append(i+self.a)
-        #     # print("rsi : " +str(rsi_list[i-2]))
-        #     # print("MFI: " +str(MFI_list[i]))
-        #     # print("D value: " + str(d_list[i]))
+
         # if W_sell> 45:
         #     print("Time to sell off as W's value hits"+ str(W_moderate)+ " Price : " + str(self.list_of_ending_price[-1]))
         #     # self.comparing_date_sell_off.append(i+self.a)
